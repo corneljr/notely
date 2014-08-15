@@ -10,6 +10,9 @@ gem 'sqlite3'
 
 gem 'active_model_serializers'
 
+gem 'devise'
+gem 'warden'
+gem 'doorkeeper'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
