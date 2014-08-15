@@ -1,6 +1,7 @@
 class Api::V1::NotesController < ApplicationController
   before_action :set_note, only: [:show, :update, :destroy]
-  doorkeeper_for :index, :show, :update, :create
+  doorkeeper_for :index, :show, scopes: [:public]
+  doorkeeper_for :update, :create, scopes: [:write, :update, :destroy]
   # GET /notes
   # GET /notes.json
   def index

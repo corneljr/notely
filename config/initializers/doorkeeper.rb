@@ -6,9 +6,6 @@ Doorkeeper.configure do
   # This block will be called to check whether the resource owner is authenticated or not.
   resource_owner_authenticator do
     current_user || warden.authenticate!(scope: user)
-    # Put your resource owner authentication logic here.
-    # Example implementation:
-    #   User.find_by_id(session[:user_id]) || redirect_to(new_user_session_url)
   end
 
   # If you want to restrict access to the web interface for adding oauth authorized applications, you need to declare the block below.
@@ -89,4 +86,6 @@ Doorkeeper.configure do
   # Some applications require dynamic query parameters on their request_uri
   # set to true if you want this to be allowed
   # wildcard_redirect_uri false
+  default_scopes :public
+  optional_scopes :write, :update
 end
